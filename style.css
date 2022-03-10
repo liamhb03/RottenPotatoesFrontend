@@ -39,10 +39,6 @@ dt {
     font-weight:bold
 }
 
-.important {
-    color:red
-}
-
 .footer {
     text-align:right
 }
@@ -50,13 +46,3 @@ dt {
 .centered {
     text-align:center
 }
-
-.nope {
-    display:none
-}
-
-.ad-container {
-    float: left;
-    min-width: 33%
-}
-
