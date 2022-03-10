@@ -20,7 +20,7 @@
     
     <img class="img" src="/potato.png">
 	<h1>Welcome to Rotten Potatoes!</h1>
-    <h1 id="days">Hello World!</h1>
+    <h1 id="days"></h1>
     
     <p>Looking for a way to Rickroll your friends on April 1st? Look no further than the Rotten Potatoes extension for Chrome! This extension replaces all links on every website with a Rickroll or your custom URL on April 1st. So be sure to get it today, add it to your friend's Chrome browser, and sit back.</p>
     <dl>
@@ -77,7 +77,7 @@
             var today = new Date();
             var christmas = new Date(today.getFullYear(), 3, 1);
             var days = Math.ceil((christmas - today) / 1000 / 60 / 60 / 24);
-            document.getElementById("days").innerHTML = days + " days until April 1st!";
+            document.getElementById("days").innerHTML = days + " days until April Fools' Day!";
         }
     </script>
 
