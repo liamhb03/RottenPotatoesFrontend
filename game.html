@@ -1,3 +1,38 @@
+<style>
+  #container {
+	width: 500px;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+	text-align: center;
+	font-family: arial;
+}
+canvas {
+	background-color: #222427;
+	margin: 0 auto;
+	display: block;
+	transform: scale(0.5);
+	vertical-align:top;
+	margin-top: -150px;
+}
+#score {
+	font-size: 50px;
+	margin: 5px 0px;
+}
+#retry {
+	cursor: pointer;
+}
+
+
+</style>
+<div id="container">
+			<h1 id="score">0</h1>
+			<h2 id="retry">Use left & right arrow keys. Click anywhere to restart</h2>
+			<canvas width="500" height="700"></canvas>
+		</div>
 <script>
 var canvas = document.querySelector('canvas');
 var ctx = canvas.getContext('2d');
@@ -105,38 +140,3 @@ document.onclick = function() {
 
 window.focus();
 </script>
-<style>
-  #container {
-	width: 500px;
-	position: absolute;
-	top: 0px;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	margin: auto;
-	text-align: center;
-	font-family: arial;
-}
-canvas {
-	background-color: #222427;
-	margin: 0 auto;
-	display: block;
-	transform: scale(0.5);
-	vertical-align:top;
-	margin-top: -150px;
-}
-#score {
-	font-size: 50px;
-	margin: 5px 0px;
-}
-#retry {
-	cursor: pointer;
-}
-
-
-</style>
-<div id="container">
-			<h1 id="score">0</h1>
-			<h2 id="retry">Use left & right arrow keys. Click anywhere to restart</h2>
-			<canvas width="500" height="700"></canvas>
-		</div>
