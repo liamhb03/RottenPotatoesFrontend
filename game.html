@@ -2,7 +2,7 @@
 	.iframecontainer {
   width: 100%;
   margin: 0 auto;
-  padding: 620px 0;
+  padding: 650px 0;
   text-align: center;
 }
 	.grid-container {
@@ -105,7 +105,7 @@
 	font-family: arial;
 }
 canvas {
-	background-color: #222427;
+	background-color: "grey";
 	margin: 0 auto;
 	display: block;
 	transform: scale(0.5);
@@ -113,7 +113,7 @@ canvas {
 	margin-top: -150px;
 }
 #score {
-	font-size: 50px;
+	font-size: 40px;
 	margin: 5px 0px;
 }
 #retry {
@@ -259,9 +259,9 @@ var speed = 10,
 // deviders
 var canvasH = canvas.height;
 var canvasW = canvas.width;
-ctx.lineWidth = 10;
+ctx.lineWidth = 14;
 ctx.setLineDash([100, 150]);
-ctx.strokeStyle = '#F7F7F9';
+ctx.strokeStyle = 'white';
 
 // player car
 // player car
@@ -275,10 +275,8 @@ function trafficRandomizer() {
 	var trafficLane = playerCarLanes[Math.floor(Math.random() * playerCarLanes.length)];
 	trafficCarsArray.push({lane: trafficLane, posY: -260});
 }
-var max = 3000;
-var min = 1750;
 (function randomInterval() {
-	var int = Math.floor(Math.random() * (max - min + 1)) + min;
+	var int = Math.floor(Math.random() * (2000)) + 2000;
 	window.setTimeout(function() {
 		trafficRandomizer();
 		randomInterval();
