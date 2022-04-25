@@ -1,0 +1,206 @@
+<html>
+  <head>
+    <title>Game</title>
+    <script>
+      var colors = ["blue", "red", "yellow", "green"];
+var text = document.getElementById("text");
+var timer = document.getElementById("timer");
+var blue = document.getElementById("blue");
+var red = document.getElementById("red");
+var yellow = document.getElementById("yellow");
+var green = document.getElementById("green");
+var color = colors[Math.floor(Math.random() * colors.length)];
+var score = 0;
+
+function game() {
+  text.innerHTML = "Simon says: " + color;
+  text.style.color = colors[Math.floor(Math.random() * colors.length)];
+  if (color == "blue") {
+    blue.onclick = function() {
+      score++;
+      timer.innerHTML = "Score: " + score;
+      color = colors[Math.floor(Math.random() * colors.length)];
+      game();
+    }
+    red.onclick = function() {
+      timer.innerHTML = "Game over! Your score is " + score;
+    }
+    yellow.onclick = function() {
+      timer.innerHTML = "Game over! Your score is " + score;
+    }
+    green.onclick = function() {
+      timer.innerHTML = "Game over! Your score is " + score;
+    }
+  }
+  else if (color == "red") {
+    blue.onclick = function() {
+      timer.innerHTML = "Game over! Your score is " + score;
+    }
+    red.onclick = function() {
+      score++;
+      timer.innerHTML = "Score: " + score;
+      color = colors[Math.floor(Math.random() * colors.length)];
+      game();
+    }
+    yellow.onclick = function() {
+      timer.innerHTML = "Game over! Your score is " + score;
+    }
+    green.onclick = function() {
+      timer.innerHTML = "Game over! Your score is " + score;
+    }
+  }
+  else if (color == "yellow") {
+    blue.onclick = function() {
+      timer.innerHTML = "Game over! Your score is " + score;
+    }
+    red.onclick = function() {
+      timer.innerHTML = "Game over! Your score is " + score;
+    }
+    yellow.onclick = function() {
+      score++;
+      timer.innerHTML = "Score: " + score;
+      color = colors[Math.floor(Math.random() * colors.length)];
+      game();
+    }
+    green.onclick = function() {
+      timer.innerHTML = "Game over! Your score is " + score;
+    }
+  }
+  else if (color == "green") {
+    blue.onclick = function() {
+      timer.innerHTML = "Game over! Your score is " + score;
+    }
+    red.onclick = function() {
+      timer.innerHTML = "Game over! Your score is " + score;
+    }
+    yellow.onclick = function() {
+      timer.innerHTML = "Game over! Your score is " + score;
+    }
+    green.onclick = function() {
+      score++;
+      timer.innerHTML = "Score: " + score;
+      color = colors[Math.floor(Math.random() * colors.length)];
+      game();
+    }
+  }
+}
+
+game();
+    </script>
+    <style>
+      .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.blue {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.red {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.yellow {
+  background-color: yellow;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.green {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.message1 {
+  background-color: #e6e6e6;
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.message2 {
+  background-color: #ffffff;
+  width: 90%;
+  height: 90px;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+     </style> 
+  </head>
+  <body>
+    <div id="container2">
+      <div class="message1">
+        <div class="message2">
+  <p id="text">Score: 0</p>
+          </div>
+  </div>
+
+  <p id="timer">Time left: 10</p>
+
+  <div class="grid-container">
+      <div class="grid-item">
+        <button id="blue" class="blue"></button>
+      </div>
+      <div class="grid-item">
+        <button id="red" class="red"></button>
+      </div>
+      <div class="grid-item">
+        <button id="yellow" class="yellow"></button>
+      </div>
+      <div class="grid-item">
+        <button id="green" class="green"></button>
+      </div>
+    </div>
+      </div>
+  </body>
+</html>
