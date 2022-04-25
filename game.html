@@ -1,0 +1,142 @@
+<script>
+var canvas = document.querySelector('canvas');
+var ctx = canvas.getContext('2d');
+var scoreHeading = document.querySelector("#score");
+
+var speed = 10,
+	score = 0,
+	trafficSpeed = 5,
+	playerCarLanes = [27, 195, 365],
+	playerCarCurrentLane = playerCarLanes[1],
+	trafficCarsArray = [{lane: playerCarLanes[2], posY: -260}],
+	collision = false
+
+// deviders
+var canvasH = canvas.height;
+var canvasW = canvas.width;
+ctx.lineWidth = 10;
+ctx.setLineDash([100, 150]);
+ctx.strokeStyle = '#F7F7F9';
+
+// player car
+// player car
+function drawPlayerCar() {
+	ctx.fillStyle = '#00A8E8';
+	ctx.fillRect(playerCarCurrentLane + 20, 300, 60, 200);
+}
+
+// traffic randomizer
+function trafficRandomizer() {
+	var trafficLane = playerCarLanes[Math.floor(Math.random() * playerCarLanes.length)];
+	trafficCarsArray.push({lane: trafficLane, posY: -260});
+}
+var max = 3000;
+var min = 1750;
+(function randomInterval() {
+	var int = Math.floor(Math.random() * (max - min + 1)) + min;
+	window.setTimeout(function() {
+		trafficRandomizer();
+		randomInterval();
+	}, int);
+}());
+
+// change lane
+document.addEventListener('keydown', function(event) {
+	var arrow = event.key;
+	var currentCarLane = playerCarLanes.indexOf(playerCarCurrentLane);
+	var newLane = currentCarLane;
+	if( arrow == 'ArrowLeft' && currentCarLane !== 0 ) {
+		newLane = currentCarLane - 1;
+	} else if( arrow == 'ArrowRight' && currentCarLane !== 2 ) {
+		newLane = currentCarLane + 1;
+	}
+	playerCarCurrentLane = playerCarLanes[newLane];
+});
+
+// draw frame
+function drawFrame() {
+	ctx.clearRect(0, 0, canvasW, canvasH);
+	// devider 1
+	canvasH += speed;
+	ctx.beginPath();
+	ctx.moveTo(166, canvasH);
+	ctx.lineTo(166, 0);
+	// devider 2
+	ctx.moveTo(332, canvasH);
+	ctx.lineTo(332, 0);
+	ctx.stroke();
+	// car
+	drawPlayerCar();
+	// traffic
+	for( var i = 0; i < trafficCarsArray.length; i++ ) {
+		var thisCar = trafficCarsArray[i];
+		var trafficLane = thisCar.lane;
+		var trafficPosY = thisCar.posY += trafficSpeed;
+		ctx.fillStyle = '#E80000';
+		ctx.fillRect(trafficLane + 20, trafficPosY - 150, 60, 200);
+		// collision
+		if( trafficLane == playerCarCurrentLane && trafficPosY > 238 ) {
+			window.cancelAnimationFrame(drawFrame);
+			collision = true;
+			return false;
+		}
+		// remove car when out of frame and add score
+		if( trafficPosY > 650 ) {
+			trafficCarsArray.splice(thisCar, 1);
+			scoreHeading.textContent = score += 1;
+		}
+	}
+	window.requestAnimationFrame(drawFrame);
+}
+window.requestAnimationFrame(drawFrame);
+
+// retry
+document.onclick = function() {
+	if( collision ) {
+		ctx.clearRect(0, 0, canvasW, canvasH);
+		trafficCarsArray = [];
+		playerCarCurrentLane = playerCarLanes[1];
+		score = 0;
+		scoreHeading.textContent = 0;
+		drawFrame();
+		collision = false;
+	}
+}
+
+window.focus();
+</script>
+<style>
+  #container {
+	width: 500px;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+	text-align: center;
+	font-family: arial;
+}
+canvas {
+	background-color: #222427;
+	margin: 0 auto;
+	display: block;
+	transform: scale(0.5);
+	vertical-align:top;
+	margin-top: -150px;
+}
+#score {
+	font-size: 50px;
+	margin: 5px 0px;
+}
+#retry {
+	cursor: pointer;
+}
+
+
+</style>
+<div id="container">
+			<h1 id="score">0</h1>
+			<h2 id="retry">Use left & right arrow keys. Click anywhere to restart</h2>
+			<canvas width="500" height="700"></canvas>
+		</div>
