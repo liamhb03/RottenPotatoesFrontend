@@ -43,14 +43,56 @@ color: white;
 }
 
 .main {
-padding: 16px;
-margin-bottom: 30px;
+padding: 20px;
+margin-bottom: 20px;
 }
 
 .navbar img {
   height: 24px;
   width: 24px;
   }
+
+
+  .search-bar {
+    height: 50px;
+    width: 100%;
+    border-radius: 1.5px;
+    background-color: #F5F6F6;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: left;
+    line-height: 50px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  
+  .filter-button {
+    height: 30px;
+    width: 30px;
+    border-radius: 1.5px;
+    background-color: #000000;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    margin-right: 12px;
+    text-align: center;
+    background-image: url(filter.png);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
 
 </style>
 </head>
@@ -66,6 +108,13 @@ margin-bottom: 30px;
 </div>
 
 <div class="main">
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search">
+    <button class="filter-button">
+    </button>
+  </div>
+
   <h1>Fixed Bottom Navigation Bar</h1>
   <h2>Scroll this page to see the effect</h2>
   <h2>The navigation bar will stay at the bottom of the page while scrolling</h2>
