@@ -55,6 +55,11 @@ padding: 20px;
 margin-bottom: 20px;
 }
 
+.search-suggestions {
+  padding: 20px;
+  margin-bottom: 20px;
+  display: none;
+  }
 
   .search-bar {
     height: 50px;
@@ -98,6 +103,22 @@ margin-bottom: 20px;
     right: 12px;
   }
 
+  .search-close-button {
+    height: 30px;
+    width: 30px;
+    border-radius: 1.5px;
+    background-color: #000000;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    text-align: center;
+    background-image: url(whiteclose.png);
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: center;
+    position: relative;
+    right: 12px;
+  }
 
 
 
@@ -295,6 +316,9 @@ margin-bottom: 20px;
     height: 30px;
     color: #000000;
     text-align: center;
+    margin-top: 20px;
+    height 30px;
+    margin-bottom: 0px;
   }
   
   
@@ -331,6 +355,9 @@ margin-bottom: 20px;
     color: #FFFFFF;
   }
 
+
+
+
 </style>
 </head>
 <body>
@@ -344,13 +371,46 @@ margin-bottom: 20px;
   </div>
 </div>
 
+<div class="search-suggestions">
+  <div class="search-bar">
+    <input class="search-suggestions-input" type="text" placeholder="Search">
+    <button onclick="openfilter()" class="search-close-button">
+    </button>
+  </div>
+
+    <div class="search-suggestions-item">
+      <h1>Shirts</h1>
+    </div>
+    <div class="search-suggestions-item">
+      <h1>Pants</h1>
+    </div>
+    <div class="search-suggestions-item">
+      <h1>Hats</h1>
+    </div>
+    <div class="search-suggestions-item">
+      <h1>Gloves</h1>
+    </div>
+    <div class="search-suggestions-item">
+      <h1>Shoes</h1>
+    </div>
+    <div class="search-suggestions-item">
+      <h1>Jackets</h1>
+    </div>
+    <div class="search-suggestions-item">
+      <h1>Wetsuits</h1>
+    </div>
+
+
+</div>
+
 <div class="main">
 
   <div class="search-bar">
-    <input type="text" placeholder="Search">
+    <input class="search-bar-input-text" type="text" placeholder="Search">
     <button onclick="openfilter()" class="filter-button">
     </button>
   </div>
+
   <div class="horizontal-scroll">
     <a class="horizontal-scroll-item active">All</a>
     <a class="horizontal-scroll-item">Shirts</a>
@@ -515,7 +575,23 @@ margin-bottom: 20px;
     document.getElementsByClassName("filter-container")[0].style.display = "none";
   }
 </script>
-
+<script>
+  window.onload = function() {
+    //when focused, show search suggestions
+    const sinput = document.querySelector(".search-bar-input-text");
+    sinput.addEventListener("focus", function() {
+      document.querySelector(".search-suggestions").style.display = "block";
+      document.querySelector(".main").style.display = "none";
+      //focus on the class="search-suggestions-input"
+      document.querySelector(".search-suggestions-input").focus();
+    });
+    const sinput2 = document.querySelector(".search-suggestions-input");
+    sinput2.addEventListener("blur", function() {
+      document.querySelector(".search-suggestions").style.display = "none";
+      document.querySelector(".main").style.display = "block";
+    });
+  }
+</script>
 </body>
 
 </html>
