@@ -229,18 +229,18 @@ margin-bottom: 20px;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1001;
+    z-index: 998;
     display: none;
   }
   
   .filter-container-item {
     position: fixed;
-    bottom: 0;
+    bottom: 34px;
     left: 0;
     width: 100%;
     background-color: #FFFFFF;
     border-radius: 20px 20px 0 0;
-    z-index: 1002;
+    z-index: 999;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -277,13 +277,14 @@ margin-bottom: 20px;
     font-weight: 600;
     font-size: 16px;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
   
   
   .filter-item {
     margin-right: 20px;
     margin-left: 20px;
-    margin-bottom: 20px;
+
   }
   
   .filter-item-header h1 {
@@ -488,6 +489,7 @@ margin-bottom: 20px;
               <button class="choice-button">All</button>
               <button class="choice-button">Price Low to Low</button>
               <button class="choice-button">Price High to Low</button>
+              <button class="choice-button">Popular</button>
               <button class="choice-button">Popular</button>
               <button class="submit-button">Submit</button>
             </form>
