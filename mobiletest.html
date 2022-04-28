@@ -2,6 +2,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes" >
+
 <style>
   html {
     min-height: calc(100% + env(safe-area-inset-top));
@@ -221,7 +222,112 @@ margin-bottom: 20px;
     bottom: 12px;
   }
 
-
+  .filter-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    display: none;
+  }
+  
+  .filter-container-item {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 20px 20px 0 0;
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .close-button {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 1.5px;
+    background-color: #F5F6F6;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    text-align: center;
+    background-image: url(close.png);
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: center;
+    right: 20px;
+    top: 20px;
+  }
+  
+  .submit-button {
+    height: 50px;
+    border-radius: 1.5px;
+    width: 100%;
+    background-color: #4E4BE7;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  
+  .filter-item {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .filter-item-header h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    height: 30px;
+    color: #000000;
+    text-align: center;
+  }
+  
+  
+  
+  
+  .form-sort {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .choice-button {
+    margin-top: 20px;
+    height: 50px;
+    border-radius: 1.5px;
+    width: 100%;
+    background-color: #F5F6F6;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  
+  .choice-button:active {
+    background-color: #000000;
+    color: #FFFFFF;
+  }
+  
+  .choice-button:focus {
+    background-color: #000000;
+    color: #FFFFFF;
+  }
 
 </style>
 </head>
@@ -240,7 +346,7 @@ margin-bottom: 20px;
 
   <div class="search-bar">
     <input type="text" placeholder="Search">
-    <button class="filter-button">
+    <button onclick="openfilter()" class="filter-button">
     </button>
   </div>
   <div class="horizontal-scroll">
@@ -371,7 +477,25 @@ margin-bottom: 20px;
 
 
 
-
+    <div class="filter-container">
+      <div class="filter-container-item">
+        <div class="filter-item">
+          <div class="filter-item-header">
+          <h1>Sort</h1>
+          <button onclick="closefilter()" class="close-button"></button>
+          </div>
+            <form class="form-sort" action="/action_page.php">
+              <button class="choice-button">All</button>
+              <button class="choice-button">Price Low to Low</button>
+              <button class="choice-button">Price High to Low</button>
+              <button class="choice-button">Popular</button>
+              <button class="submit-button">Submit</button>
+            </form>
+            </div>
+        </div>
+      </div>
+      
+      
 
 
 
@@ -379,5 +503,16 @@ margin-bottom: 20px;
 
 </div>
 
+<script>
+  function openfilter() {
+    document.getElementsByClassName("filter-container")[0].style.display = "block";
+  }
+  
+  function closefilter() {
+    document.getElementsByClassName("filter-container")[0].style.display = "none";
+  }
+</script>
+
 </body>
+
 </html>
