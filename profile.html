@@ -13,16 +13,12 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-user-select: none;
-  
 }
-
-
 
 .navbar img {
   height: 24px;
   width: 24px;
   }
-
 
 .navbar {
 overflow: hidden;
@@ -50,614 +46,150 @@ font-size: 17px;
 width: 24px;
 }
 
+
 .main {
 padding: 20px;
 margin-bottom: 20px;
 }
 
-.search-suggestions {
-  padding: 20px;
-  margin-bottom: 20px;
-  display: none;
+
+
+
+
+.title {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: #000000;
+    margin-top: 0px;
   }
 
-  .search-bar {
-    height: 50px;
+.sub-title {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: #000000;
+    opacity: .75;
+    margin: 0px;
+    margin-bottom: 16px;
+    margin-top: 20px;
+  }
+
+  .settings-standard-button {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: rgb(127, 127, 127, .5);
+    margin: 0px;
+    padding: 0px;
+    height: 48px;
+    border: none;
     width: 100%;
-    border-radius: 1.5px;
-    background-color: #F5F6F6;
+    outline: none;
+    background-color: #FFFFFF;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-  }
-  
-  .search-bar input {
-    height: 100%;
-    width: calc(100% - 42px);
-    border: none;
-    outline: none;
-    background-color: transparent;
-    color: #000000;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    text-align: left;
-    line-height: 50px;
-    margin-left: 10px;
-    margin-right: 12px;
-  }
-  
-  .filter-button {
-    height: 30px;
-    width: 30px;
-    border-radius: 1.5px;
-    background-color: #000000;
-    border: none;
-    outline: none;
-    margin-left: auto;
-    text-align: center;
-    background-image: url(filter.png);
+    background-image: url(/arrowright.png);
     background-repeat: no-repeat;
+    background-position: right;
     background-size: 16px;
-    background-position: center;
-    position: relative;
-    right: 12px;
   }
 
-  .search-close-button {
-    height: 30px;
-    width: 30px;
-    border-radius: 1.5px;
-    background-color: #000000;
-    border: none;
-    outline: none;
-    margin-left: auto;
-    text-align: center;
-    background-image: url(whiteclose.png);
-    background-repeat: no-repeat;
-    background-size: 16px;
-    background-position: center;
-    position: relative;
-    right: 12px;
-  }
-
-
-
-
-  .horizontal-scroll {
-    display: flex;
-    flex-direction: row;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    padding-bottom: 10px;
-  }
-  
-  .horizontal-scroll-item {
-    display: inline-block;
-    padding-top: 12px;
-    margin-right: 16px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.25);
-    text-align: center;
-    border-radius: 1.5px;
-  }
-  
-  .horizontal-scroll-item:last-child {
-    margin-right: 0;
-  }
-  
-  .horizontal-scroll-item.active {
-    color: #000000;
-  }
-
-  .horizontal-scroll::-webkit-scrollbar {
-    display: none;
-  }
-  
-
-
-
-
-
-
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    grid-gap: 20px;
-    padding-top: 10px;
-  }
-  
-  .product-grid-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #FFFFFF;
-    border-radius: 1.5px;
-  }
-  
-  .product-grid-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .product-grid-item-info {
-
-  }
-  
-  .product-grid-item-info h2 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 10px;
-    color: rgba(0, 0, 0, 0.5);
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  .product-grid-item-info h3 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    color: #000000;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .product-grid-item-info h1 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.75);
-    margin-top: 10px;
-    margin-bottom: 30px;
-    
-  }
-
-
-  .product-grid-item-imgbtn {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    
-  }
-  
-  .product-grid-item-addtocart {
-    position: absolute;
-    height: 30px;
-    width: 30px;
-    border-radius: 1.5px;
-    background-color: #F5F6F6;
-    border: none;
-    outline: none;
-    margin-left: auto;
-    text-align: center;
-    background-image: url(like.png);
-    background-repeat: no-repeat;
-    background-size: 16px;
-    background-position: center;
-    right: 12px;
-    bottom: 12px;
-  }
-
-  .filter-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 998;
-    display: none;
-  }
-  
-  .filter-container-item {
-    position: fixed;
-    bottom: 34px;
-    left: 0;
-    width: 100%;
-    background-color: #FFFFFF;
-    border-radius: 20px 20px 0 0;
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .close-button {
-    position: absolute;
-    height: 30px;
-    width: 30px;
-    border-radius: 1.5px;
-    background-color: #F5F6F6;
-    border: none;
-    outline: none;
-    margin-left: auto;
-    text-align: center;
-    background-image: url(close.png);
-    background-repeat: no-repeat;
-    background-size: 16px;
-    background-position: center;
-    right: 20px;
-    top: 20px;
-  }
-  
-  .submit-button {
+  .sign-out-button {
     height: 50px;
     border-radius: 1.5px;
     width: 100%;
-    background-color: #4E4BE7;
+    background-color: #FF7171;
     border: none;
     outline: none;
     text-align: center;
-    color: #FFFFFF;
+    color: #000000;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 16px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+      margin-top: 20px;
+      margin-bottom: 30px;
   }
-  
-  
-  .filter-item {
-    margin-right: 20px;
-    margin-left: 20px;
 
-  }
-  
-  .filter-item-header h1 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    height: 30px;
-    color: #000000;
-    text-align: center;
-    margin-top: 20px;
-    height 30px;
-    margin-bottom: 0px;
-  }
-  
-  
-  
-  
-  .form-sort {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .choice-button {
-    margin-top: 20px;
-    height: 50px;
-    border-radius: 1.5px;
+.settings-separator {
+    height: 1px;
     width: 100%;
+    margin: 0px;
+    padding: 0px;
     background-color: #F5F6F6;
-    border: none;
-    outline: none;
-    text-align: center;
-    color: #000000;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-  }
-  
-  .choice-button:active {
-    background-color: #000000;
-    color: #FFFFFF;
-  }
-  
-  .choice-button:focus {
-    background-color: #000000;
-    color: #FFFFFF;
-  }
-
-
-
-
-
-
-
-
-
-  .search-suggestions-tools {
-    margin-top: 20px;
-  }
-  
-  .search-suggestions-tools-button {
-    width: 100%;
-    border-radius: 1.5px;
-    background-color: #FFFFFF;
-    border: none;
-    outline: none;
-    text-align: left;
-    color: #000000;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 0px;
-    margin-top: 10px;
-    height: auto;
-  }
-
-
-  .search-suggestions-suggestions h1 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.5);
-    margin-bottom: 10px;
-    height: auto;
-  }
-
-  .search-suggestions-tools-button-photo {
-    width: 100%;
-    border-radius: 1.5px;
-    background-color: #FFFFFF;
-    border: none;
-    outline: none;
-    text-align: left;
-    color: #000000;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding: 0px;
-    background-image: url(close.png);
-    background-repeat: no-repeat;
-    background-size: 16px;
-    background-position: left;
-    padding-left: 22px;
-    height: auto;
-  }
-  
-  
-
+}
 </style>
 </head>
 <body>
 
 <div class="navbar">
   <div id="navbar-container">
-    <a href="javascript:openHome()"><img src="/search.png" alt="Lights" style="width:100%"></a>
+    <a href="javascript:openHome()"><img src="/search.png" alt="Lights" style="width:100%; opacity: .25;"></a>
     <a href="javascript:openBag()"><img src="/bag.png" alt="Lights" style="width:100%; opacity: .25;"></a>
     <a href="javascript:openOrders()"><img src="/order.png" style="width:100%; opacity: .25;"></a>
-    <a href="javascript:openProfile()"><img src="/profile.png" alt="Lights" style="width:100%; opacity: .25;"></a>
+    <a href="javascript:openProfile()"><img src="/profile.png" alt="Lights" style="width:100%"></a>
   </div>
-</div>
-
-<div class="search-suggestions">
-  <div class="search-bar">
-    <input class="search-suggestions-input" type="text" placeholder="Search">
-    <button onclick="openfilter()" class="search-close-button">
-    </button>
-  </div>
-
-    <div class="search-suggestions-tools">
-    <button class="search-suggestions-tools-button">↗ Search “Green Shirt” in products</button>
-    <button class="search-suggestions-tools-button">↗ Search “Green Shirt” in stores</button>
-    <button class="search-suggestions-tools-button-photo">Search with a photo</button>
-</div>
-
-<div class="search-suggestions-suggestions">
-  <h1>Suggestions</h1>
-  <button class="search-suggestions-tools-button">↗ Green shirt and tie</button>
-  <button class="search-suggestions-tools-button">↗ Green shirt and pants</button>
-</div>
-
 </div>
 
 <div class="main">
+    <div class="settings-container">
 
-  <div class="search-bar">
-    <input class="search-bar-input-text" type="text" placeholder="Search">
-    <button onclick="openfilter()" class="filter-button">
-    </button>
-  </div>
+  <h1 class="title">Account</h1>
+  <h2 class="sub-title">General</h2>
+  <div class="settings-separator"></div>
+<button class="settings-standard-button">Name</button>
+<div class="settings-separator"></div>
+<button class="settings-standard-button">Email</button>
+<div class="settings-separator"></div>
+<button class="settings-standard-button">Phone</button>
+<div class="settings-separator"></div>
+<button class="settings-standard-button">Password</button>
+<div class="settings-separator"></div>
+<button class="settings-standard-button">Address</button>
+<div class="settings-separator"></div>
+<button class="settings-standard-button">Payment Method</button>
+<div class="settings-separator"></div>
+  <h2 class="sub-title">Help</h2>
+  <div class="settings-separator"></div>
+<button class="settings-standard-button">FAQs</button>
+<div class="settings-separator"></div>
+<button class="settings-standard-button">Contact Support</button>
+<div class="settings-separator"></div>
+  <h2 class="sub-title">Legal</h2>
+  <div class="settings-separator"></div>
+  <button class="settings-standard-button">Terms of Service</button>
+  <div class="settings-separator"></div>
+  <button class="settings-standard-button">Privacy Policy</button>
+  <div class="settings-separator"></div>
 
-  <div class="horizontal-scroll">
-    <a class="horizontal-scroll-item active">All</a>
-    <a class="horizontal-scroll-item">Shirts</a>
-    <a class="horizontal-scroll-item">Pants</a>
-    <a class="horizontal-scroll-item">Hats</a>
-    <a class="horizontal-scroll-item">Gloves</a>
-    <a class="horizontal-scroll-item">Shoes</a>
-    <a class="horizontal-scroll-item">Jackets</a>
-    <a class="horizontal-scroll-item">Wetsuits</a>
-  </div>
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-  <div class="product-grid">
-    <div class="product-grid-item">
-      <div class="product-grid-item-imgbtn">
-      
-      <img src="https://raw.githubusercontent.com/liamhb03/RottenPotatoesFrontend/master/imgimg.png" alt="">
-      <button class="product-grid-item-addtocart"></button>
+  <button class="sign-out-button">Sign Out</button>
     </div>
-      <div class="product-grid-item-info">
-        <h2>L.L. BEAN</h2>
-        <h3>Product Name</h3>
-        <h1>$100</h1>
-      </div>
-    </div>
-      <div class="product-grid-item">
-        <div class="product-grid-item-imgbtn">
-
-        <img src="https://raw.githubusercontent.com/liamhb03/RottenPotatoesFrontend/master/imgimg.png" alt="">
-        <button class="product-grid-item-addtocart"></button>  
-      </div>
-        <div class="product-grid-item-info">
-          <h2>L.L. BEAN</h2>
-          <h3>Product Name</h3>
-          <h1>$100</h1>
-        </div>
-      </div>
-      <div class="product-grid-item">
-        <div class="product-grid-item-imgbtn">
-        
-        <img src="https://raw.githubusercontent.com/liamhb03/RottenPotatoesFrontend/master/imgimg.png" alt="">
-        <button class="product-grid-item-addtocart"></button>
-      </div>
-        <div class="product-grid-item-info">
-          <h2>L.L. BEAN</h2>
-          <h3>Product Name</h3>
-          <h1>$100</h1>
-        </div>
-      </div>
-        <div class="product-grid-item">
-          <div class="product-grid-item-imgbtn">
-  
-          <img src="https://raw.githubusercontent.com/liamhb03/RottenPotatoesFrontend/master/imgimg.png" alt="">
-          <button class="product-grid-item-addtocart"></button>  
-        </div>
-          <div class="product-grid-item-info">
-            <h2>L.L. BEAN</h2>
-            <h3>Product Name</h3>
-            <h1>$100</h1>
-          </div>
-        </div>
-        <div class="product-grid-item">
-          <div class="product-grid-item-imgbtn">
-          
-          <img src="https://raw.githubusercontent.com/liamhb03/RottenPotatoesFrontend/master/imgimg.png" alt="">
-          <button class="product-grid-item-addtocart"></button>
-        </div>
-          <div class="product-grid-item-info">
-            <h2>L.L. BEAN</h2>
-            <h3>Product Name</h3>
-            <h1>$100</h1>
-          </div>
-        </div>
-          <div class="product-grid-item">
-            <div class="product-grid-item-imgbtn">
-    
-            <img src="https://raw.githubusercontent.com/liamhb03/RottenPotatoesFrontend/master/imgimg.png" alt="">
-            <button class="product-grid-item-addtocart"></button>  
-          </div>
-            <div class="product-grid-item-info">
-              <h2>L.L. BEAN</h2>
-              <h3>Product Name</h3>
-              <h1>$100</h1>
-            </div>
-          </div>
-          <div class="product-grid-item">
-            <div class="product-grid-item-imgbtn">
-            
-            <img src="https://raw.githubusercontent.com/liamhb03/RottenPotatoesFrontend/master/imgimg.png" alt="">
-            <button class="product-grid-item-addtocart"></button>
-          </div>
-            <div class="product-grid-item-info">
-              <h2>L.L. BEAN</h2>
-              <h3>Product Name</h3>
-              <h1>$100</h1>
-            </div>
-          </div>
-            <div class="product-grid-item">
-              <div class="product-grid-item-imgbtn">
-      
-              <img src="https://raw.githubusercontent.com/liamhb03/RottenPotatoesFrontend/master/imgimg.png" alt="">
-              <button class="product-grid-item-addtocart"></button>  
-            </div>
-              <div class="product-grid-item-info">
-                <h2>L.L. BEAN</h2>
-                <h3>Product Name</h3>
-                <h1>$100</h1>
-              </div>
-            </div>
-    </div>
-
-
-
-
-
-
-
-    <div class="filter-container">
-      <div class="filter-container-item">
-        <div class="filter-item">
-          <div class="filter-item-header">
-          <h1>Sort</h1>
-          <button onclick="closefilter()" class="close-button"></button>
-          </div>
-            <form class="form-sort" action="/action_page.php">
-              <button class="choice-button">All</button>
-              <button class="choice-button">Price Low to Low</button>
-              <button class="choice-button">Price High to Low</button>
-              <button class="choice-button">Popular</button>
-              <button class="choice-button">Popular</button>
-              <button class="submit-button">Submit</button>
-            </form>
-            </div>
-        </div>
-      </div>
-      
-      
-
-
-
-
-
 </div>
 
 <script>
-  function openfilter() {
-    document.getElementsByClassName("filter-container")[0].style.display = "block";
-  }
-  
-  function closefilter() {
-    document.getElementsByClassName("filter-container")[0].style.display = "none";
-  }
-</script>
-<script>
-  window.onload = function() {
-    //when focused, show search suggestions
-    const sinput = document.querySelector(".search-bar-input-text");
-    sinput.addEventListener("focus", function() {
-      document.querySelector(".search-suggestions").style.display = "block";
-      document.querySelector(".main").style.display = "none";
-      document.querySelector(".navbar").style.display = "none";
-      //focus on the class="search-suggestions-input"
-      document.querySelector(".search-suggestions-input").focus();
-    });
-    const sinput2 = document.querySelector(".search-suggestions-input");
-    sinput2.addEventListener("blur", function() {
-      document.querySelector(".search-suggestions").style.display = "none";
-      document.querySelector(".main").style.display = "block";
-      document.querySelector(".navbar").style.display = "block";
-    });
-  }
-
-  function openHome() {
-    window.open("/indexwbar.html", "_self");
-  }
-  
-  function openBag() {
-    window.open("/bag.html", "_self");
-  }
-  
-  function openOrders() {
-    window.open("/orders.html", "_self");
-  }
-  
-  function openProfile() {
-    window.open("/profile.html", "_self");
-  }
-</script>
+    function openHome() {
+        window.open("/mobiletest.html", "_self");
+      }
+      
+      function openBag() {
+        window.open("/bag.html", "_self");
+      }
+      
+      function openOrders() {
+        window.open("/orders.html", "_self");
+      }
+      
+      function openProfile() {
+        window.open("/profile.html", "_self");
+      }
+    </script>
 </body>
-
 </html>
+
+
+
+
+
+
+
