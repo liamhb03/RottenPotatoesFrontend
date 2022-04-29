@@ -1,0 +1,176 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes" >
+
+<style>
+  html {
+    min-height: calc(100% + env(safe-area-inset-top));
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.navbar img {
+  height: 24px;
+  width: 24px;
+  }
+
+.navbar {
+overflow: hidden;
+background-color: #000000;
+position: fixed;
+bottom: 0;
+width: 100%;
+z-index: 1000;
+}
+
+#navbar-container {
+display: flex;
+justify-content: space-around;
+padding: 3px 20px;
+}
+
+.navbar a {
+float: left;
+display: block;
+color: #f2f2f2;
+text-align: center;
+padding: 10px 16px;
+text-decoration: none;
+font-size: 17px;
+width: 24px;
+}
+
+
+.main {
+padding: 20px;
+margin-bottom: 20px;
+}
+
+
+
+
+
+.title {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: #000000;
+    margin-top: 0px;
+  }
+
+.sub-title {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: #000000;
+    opacity: .75;
+    margin: 0px;
+    margin-bottom: 16px;
+    margin-top: 20px;
+  }
+
+  .settings-standard-button {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: rgb(127, 127, 127, .5);
+    margin: 0px;
+    padding: 0px;
+    height: 48px;
+    border: none;
+    width: 100%;
+    outline: none;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(/arrowright.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 16px;
+  }
+
+  .sign-out-button {
+    height: 50px;
+    border-radius: 1.5px;
+    width: 100%;
+    background-color: #FF7171;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+      margin-top: 20px;
+  }
+
+.settings-separator {
+    height: 1px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #F5F6F6;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div id="navbar-container">
+    <a href="/indexwbar.html"><img src="/search.png" alt="Lights" style="width:100%; opacity: .25;"></a>
+    <a href="#news"><img src="/bag.png" alt="Lights" style="width:100%; opacity: .25;"></a>
+    <a href="#contact"><img src="/order.png" style="width:100%; opacity: .25;"></a>
+    <a href="/profile.html"><img src="/profile.png" alt="Lights" style="width:100%"></a>
+  </div>
+</div>
+
+<div class="main">
+    <div class="settings-container">
+
+  <h1 class="title">Account</h1>
+  <h2 class="sub-title">General</h2>
+  <div class="settings-separator"></div>
+<button class="settings-standard-button">Name</button>
+<div class="settings-separator"></div>
+<button class="settings-standard-button">Email</button>
+<div class="settings-separator"></div>
+<button class="settings-standard-button">Phone</button>
+<div class="settings-separator"></div>
+<button class="settings-standard-button">Password</button>
+<div class="settings-separator"></div>
+<button class="settings-standard-button">Address</button>
+<div class="settings-separator"></div>
+<button class="settings-standard-button">Payment Method</button>
+<div class="settings-separator"></div>
+  <h2 class="sub-title">Help</h2>
+  <div class="settings-separator"></div>
+<button class="settings-standard-button">FAQs</button>
+<div class="settings-separator"></div>
+<button class="settings-standard-button">Contact Support</button>
+<div class="settings-separator"></div>
+  <h2 class="sub-title">Legal</h2>
+  <div class="settings-separator"></div>
+  <button class="settings-standard-button">Terms of Service</button>
+  <div class="settings-separator"></div>
+  <button class="settings-standard-button">Privacy Policy</button>
+  <div class="settings-separator"></div>
+
+  <button class="sign-out-button">Sign Out</button>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
