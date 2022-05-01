@@ -2,6 +2,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <style>
   html {
@@ -61,6 +62,16 @@ margin-bottom: 20px;
   display: none;
   }
 
+  .search-bar-selected {
+    height: 50px;
+    width: 100%;
+    border-radius: 1.5px;
+    background-color: #F5F6F6;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+  }
+
   .search-bar {
     height: 50px;
     width: 100%;
@@ -71,6 +82,31 @@ margin-bottom: 20px;
   }
   
   .search-bar input {
+    height: 100%;
+    width: calc(100% - 42px);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: left;
+    line-height: 50px;
+    margin-left: 10px;
+    margin-right: 12px;
+  }
+
+  .search-bar-selected {
+    height: 50px;
+    width: 100%;
+    border-radius: 1.5px;
+    background-color: #F5F6F6;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar-selected input {
     height: 100%;
     width: calc(100% - 42px);
     border: none;
@@ -181,7 +217,10 @@ margin-bottom: 20px;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: 996;
   }
+  
+
   
   .product-grid-item-info {
 
@@ -223,6 +262,8 @@ margin-bottom: 20px;
     justify-content: center;
     width: 100%;
     height: 100%;
+
+
     
   }
   
@@ -242,6 +283,7 @@ margin-bottom: 20px;
     background-position: center;
     right: 12px;
     bottom: 12px;
+    z-index: 998;
   }
 
   .filter-container {
@@ -416,22 +458,447 @@ margin-bottom: 20px;
   }
   
   
+  .product {
+    display: none;
+    background: rgb(0, 0, 0);
+    height: auto;
+    margin-top: 0px;
+  }
 
+  .individual-product {
+    border-radius: 20px 20px 0px 0px;
+    background: #ffffff;
+    
+  }
+
+  .individual-product-h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    height: 30px;
+    color: #000000;
+    text-align: center;
+    height 30px;
+    margin-bottom: 0px;
+  }
+  .individual-product-item-header{
+    padding-top: 20px;
+  }
+  .individual-product-item-header h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    height: 30px;
+    color: #000000;
+    text-align: center;
+    margin-top: 0px;
+    height 30px;
+    margin-bottom: 0px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  .individual-product-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 20px;
+  }
+  
+  .individual-product-content-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto%;
+    margin: 0px;
+    
+  }
+  
+  .individual-product-content-image-slides {
+    display: flex;
+    
+
+
+    
+  }
+  .individual-product-content-image-slides img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    
+  }
+
+  .individual-product-content-image-slides-hidden-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: none;
+    
+  }
+  
+  .individual-product-content-text {
+    position: relative;
+    height: 100%;
+  }
+  
+  .individual-product-content-text h1 {
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  opacity: 50%;
+  color: #000;
+  margin-left: 20px;
+  margin-bottom: 0px;
+  height: auto;
+  }
+  
+  .individual-product-content-text h2 {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    opacity: 75%;
+    color: #000;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    height: auto;
+  }
+  
+  
+  .product-like {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 1.5px;
+    background-color: #F5F6F6;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    text-align: center;
+    background-image: url(like.png);
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: center;
+    right: 40px;
+    z-index: 998;
+    margin-top: -50px;
+  }
+  
+  .product-share {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 1.5px;
+    background-color: #F5F6F6;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    margin-top: -50px;
+    text-align: center;
+    background-image: url(share.png);
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: center;
+    z-index: 998;
+    left: 40px;
+    
+  }
+  button-container-product {
+    width: 100%;
+  }
+
+  .product-img-navigation {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100vw;
+    }
+    
+    .product-img-navigation-btn-active {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: black;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    outline: none;
+    }
+    
+    .product-img-navigation-btn-inactive {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.25);
+    margin-left: 10px;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    }
+
+    .individual-product-parameters {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      margin: 20px;
+    }
+    
+    .settings-separator {
+      width: 100%;
+      height: 1px;
+      background-color: #F5F6F6;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    
+    .individual-product-parameters-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 48px;
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+    
+    .individual-product-parameters-container-name {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 0px;
+    }
+    
+    .individual-product-parameters-container-name h1 {
+      font-size: 14px;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      color: rgb(0,0,0);
+      margin-left: 0px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      height: auto;
+      opacity: 100%;
+    }
+    
+    .individual-product-parameters-container-option {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 0px;
+    }
+    
+    .individual-product-parameters-container-option h2 {
+      font-size: 14px;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      color: rgb(0,0,0,.5);
+      margin-left: 20px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      height: auto;
+      opacity: 100%;
+    }
+    
+    
+    .individual-product-content-text p {
+      font-size: 14px;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      color: #000;
+      margin-top: 20px;
+      margin-bottom: 0px;
+      height: auto;
+      opacity: 100%;
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .add-to-cart-box-container {
+      position: fixed;
+      bottom: 50px;
+      width: 100%;
+      height: 50px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    
+    .add-to-cart-box {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .add-to-cart-button-quantity-container {
+      width: 25%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding-left: 20px;
+      padding-right: 10px;
+    }
+    
+    .add-to-cart-button-container {
+      width: 75%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding-right: 20px;
+      padding-left: 10px;
+    }
+    
+    .add-to-cart-button-add {
+    height: 50px;
+    border-radius: 1.5px;
+    width: 100%;
+    background-color: #4E4BE7;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    }
+    
+    .increase-quantity {
+      
+
+      width: 50px;
+      height: 50px;
+      background-color: #F5F6F6;
+      border: none;
+      outline: none;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: #000000;
+      border-radius: 0px;
+      border-left: 1px solid #F5F6F6;
+      border-radius: 0 1.5px 1.5px 0;
+    }
+    
+    .decrease-quantity {
+      width: 50px;
+      height: 50px;
+      background-color: #F5F6F6;
+      border: none;
+      outline: none;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: #000000;
+      border-radius: 0px;
+      border-right: 1px solid #F5F6F6;
+      border-radius: 1.5px 0 0 1.5px;
+    }
+    
+    .quantity-split {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      flex-direction: column;
+      background-color: #F5F6F6;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      outline: none;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #000000;
+      border-radius: 0px;
+      border-left: 1px solid #F5F6F6;
+      border-right: 1px solid #F5F6F6;
+    }
+    
+    .quantity-split h1 {
+     font-size: 16px;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      color: #000;
+      margin-left: 0px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      height: auto;
+      opacity: 100%;
+    }
+
+
+
+
+
+
+    
 </style>
 </head>
 <body>
 
 <div class="navbar">
   <div id="navbar-container">
-    <a href="./mobiletest.html"><img src="/search.png" alt="Lights" style="width:100%"></a>
-    <a href="/"><img src="/bag.png" alt="Lights" style="width:100%; opacity: .25;"></a>
-    <a href="/"><img src="/order.png" style="width:100%; opacity: .25;"></a>
-    <a href="./profile.html"><img src="/profile.png" alt="Lights" style="width:100%; opacity: .25;"></a>
+    <a href="/mobiletest.html"><img src="/search.png" alt="Lights" style="width:100%"></a>
+    <a href="/bag.html"><img src="/bag.png" alt="Lights" style="width:100%; opacity: .25;"></a>
+    <a href="/orders.html"><img src="/order.png" style="width:100%; opacity: .25;"></a>
+    <a href="/profile.html"><img src="/profile.png" alt="Lights" style="width:100%; opacity: .25;"></a>
   </div>
 </div>
 
 <div class="search-suggestions">
-  <div class="search-bar">
+  <div class="search-bar-selected">
     <input class="search-suggestions-input" type="text" placeholder="Search">
     <button onclick="openfilter()" class="search-close-button">
     </button>
@@ -439,7 +906,7 @@ margin-bottom: 20px;
 
     <div class="search-suggestions-tools">
     <button class="search-suggestions-tools-button">↗ Search “Green Shirt” in products</button>
-    <button class="search-suggestions-tools-button">↗ Search “Green Shirt” in stores</button>
+    <button href="/stores" class="search-suggestions-tools-button">↗ Search “Green Shirt” in stores</button>
     <button class="search-suggestions-tools-button-photo">Search with a photo</button>
 </div>
 
@@ -450,6 +917,83 @@ margin-bottom: 20px;
 </div>
 
 </div>
+
+
+
+
+<div class="product">
+  <div class="individual-product">
+  <div class="individual-product-item-header">
+
+    <h1>Blue Shirt With
+    Green Stuff</h1>
+    <button onclick="closeproduct()" class="close-button"></button>
+    </div>
+    <div class="individual-product-content">
+    <div class="individual-product-content-image">
+    <div class="individual-product-content-image-slides">
+    <img src="https://raw.githubusercontent.com/liamhb03/RottenPotatoesFrontend/master/imgimg.png" alt="Lights" style="width:100%">
+    <img class="individual-product-content-image-slides-hidden-img" src="https://raw.githubusercontent.com/liamhb03/RottenPotatoesFrontend/master/imgimg.png" alt="Lights" style="width:100%">
+    </div>
+    </div>
+    
+    <div class="individual-product-content-text">
+      <div class"button-container-product">
+        <button class="product-like"></button>
+    <button class="product-share"></button>
+      </div>
+      <div class="product-img-navigation">
+        <button class="product-img-navigation-btn-active"></button>
+        <button class="product-img-navigation-btn-inactive"></button>
+      </div>
+    <h1>SOLD BY LLBEAN</h1>
+    <h2>$12.99</h2>
+    <div class="individual-product-parameters">
+      <div class="settings-separator"></div>
+      <div class="individual-product-parameters-container">
+      <div class="individual-product-parameters-container-name">
+        <h1>Color</h1>
+        </div>
+        <div class="individual-product-parameters-container-option">
+        <h2>RED</h2>
+        </div>
+      </div>
+      <div class="settings-separator"></div>
+      <div class="individual-product-parameters-container">
+        <div class="individual-product-parameters-container-name">
+          <h1>Size</h1>
+          </div>
+          <div class="individual-product-parameters-container-option">
+          <h2>MEDIUM</h2>
+          </div>
+        </div>
+        <div class="settings-separator"></div>
+        <p>Cushioned, lightweight shirt. Simple and easy to wear. Soft, stretchy, and adjustable. Made from real Wookies. Ster Wurst. I wan’t curry wurst and doener.</p>
+      </div>
+
+    </div>
+    </div>
+    <div class="add-to-cart-box-container">
+        <div class="add-to-cart-box">
+          <div class="add-to-cart-button-quantity-container">
+    <button class="decrease-quantity">-</button>
+    <div class="quantity-split">
+      <h1>1</h1>
+    </div>
+    <button class="increase-quantity">+</button>
+  </div>
+  <div class="add-to-cart-button-container">
+    <button class="add-to-cart-button-add">Add to bag</button>
+  </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+</div>
+
+
+
 
 <div class="main">
 
@@ -483,18 +1027,32 @@ margin-bottom: 20px;
 
 
   <div class="product-grid">
+
+    
+
+
+    
     <div class="product-grid-item">
-      <div class="product-grid-item-imgbtn">
       
+      <div class="product-grid-item-imgbtn">
+
       <img src="https://raw.githubusercontent.com/liamhb03/RottenPotatoesFrontend/master/imgimg.png" alt="">
+
       <button class="product-grid-item-addtocart"></button>
     </div>
+ 
       <div class="product-grid-item-info">
         <h2>L.L. BEAN</h2>
         <h3>Product Name</h3>
         <h1>$100</h1>
       </div>
+    
     </div>
+
+
+
+
+
       <div class="product-grid-item">
         <div class="product-grid-item-imgbtn">
 
@@ -507,6 +1065,12 @@ margin-bottom: 20px;
           <h1>$100</h1>
         </div>
       </div>
+
+
+
+
+
+
       <div class="product-grid-item">
         <div class="product-grid-item-imgbtn">
         
@@ -642,7 +1206,22 @@ margin-bottom: 20px;
     });
   }
 
-  
+
+</script>
+<script>
+  $(".product-grid-item img").click(function(){
+    $(".product").show();
+    $(".main").hide();
+  });
+
+  function closeproduct() {
+    $(".product").hide();
+    $(".main").show();
+  }
+
+  $(".product-grid-item-addtocart").click(function(){
+    console.log("success");
+  });
 </script>
 </body>
 
